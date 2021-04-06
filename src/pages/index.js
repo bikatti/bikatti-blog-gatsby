@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 import Header from "../components/header"
 import Container from "../components/container"
+import Layout from "../components/layout"
 
 
 const ImgHero = styled.img`
@@ -50,11 +50,8 @@ const User = props => (
 
 export default function Home() {
   return (
-      <Container>
-        <div style={{ color: `purple` }}>
-          <Link to="/about/">About</Link>
-          <Link to="/about-css-modules/">About css modules</Link>
-
+      <Layout>
+        <Container>
           <Header headerTitle="Hello Bikatti! Again" />
           <p>What a world</p>
           <ImgHero src="https://source.unsplash.com/random/400x200" alt="" />
@@ -69,7 +66,7 @@ export default function Home() {
             avatar="https://randomuser.me/api/portraits/men/32.jpg"
             excerpt="I'm Bob smith, a vertically aligned type of guy. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
           />
-        </div>
-      </Container>
+        </Container>
+      </Layout>
     )
 }

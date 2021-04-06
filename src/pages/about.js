@@ -1,14 +1,19 @@
 import React from "react"
-import { Link } from "gatsby"
+
 import Header from "../components/header"
+import Container from "../components/container"
+import Layout from "../components/layout"
 
 export default function About() {
   return (
-    <div style={{ color: `teal` }}>
-        <Link to="/">Home</Link>
-        <Header headerTitle="About Gatsby" />
-        <Header headerTitle="It's pretty cool" />
-        <p>Such wow. Very React.</p>
-    </div>
+    <Layout>
+      <Container>
+        <div style={{ color: `teal` }}>
+            <Header headerTitle="About Gatsby" />
+            <Header headerTitle="It's pretty cool" />
+            <p>Such wow. Very React.</p>
+        </div>
+      </Container>
+  </Layout>
   )
 }

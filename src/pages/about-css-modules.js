@@ -1,9 +1,9 @@
 import React from "react"
 import * as styles from "./about-css-modules.module.css"
 
-import { Link } from "gatsby"
 import Header from "../components/header"
 import Container from "../components/container"
+import Layout from "../components/layout"
 
 const User = props => (
   <div className={styles.user}>
@@ -17,20 +17,21 @@ const User = props => (
 
 export default function About() {
   return (
-    <Container>
-        <Link to="/">Home</Link>
-        <Header headerTitle={ 'About CSS Modules' } />
-        <p>CSS Modules are cool</p>
-        <User
-          username="Maria Randall"
-          avatar="https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/docs/tutorial/part-two/pexels-daniel-xavier-1102341.jpg"
-          excerpt="I'm Maria Randall. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        />
-        <User
-          username="Daniela Dewitt"
-          avatar="https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/docs/tutorial/part-two/pexels-guilherme-almeida-1858175.jpg"
-          excerpt="I'm Daniela Dewitt. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
-        />
-    </Container>
+    <Layout>
+      <Container>
+          <Header headerTitle={ 'About CSS Modules' } />
+          <p>CSS Modules are cool</p>
+          <User
+            username="Maria Randall"
+            avatar="https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/docs/tutorial/part-two/pexels-daniel-xavier-1102341.jpg"
+            excerpt="I'm Maria Randall. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          />
+          <User
+            username="Daniela Dewitt"
+            avatar="https://raw.githubusercontent.com/gatsbyjs/gatsby/master/docs/docs/tutorial/part-two/pexels-guilherme-almeida-1858175.jpg"
+            excerpt="I'm Daniela Dewitt. Lorem ipsum dolor sit amet, consectetur adipisicing elit."
+          />
+      </Container>
+    </Layout>
   )
 }
