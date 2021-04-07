@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 
+import { graphql } from "gatsby"
+
 import Header from "../components/header"
 import Container from "../components/container"
 import Layout from "../components/layout"
@@ -48,13 +50,14 @@ const User = props => (
   </UserWrapper>
 )
 
-export default function Home() {
+export default function Home( { data } ) {
   return (
       <Layout>
         <Container>
-          <Header headerTitle="Hello Bikatti! Again" />
+          <Header headerTitle={data.site.siteMetadata.title} />
           <p>What a world</p>
-          <ImgHero src="https://source.unsplash.com/random/400x200" alt="" />
+          <ImgHero src="https://2.bp.blogspot.com/-BMP2l6Hwvp4/TiAxeGx4CTI/AAAAAAAAD_M/XlC_mY3SoEw/s1600/panda-group-eating-bamboo.jpg"
+          alt="Group of pandas eating bamboo" />
 
           <User
             username="Jane Doe"
@@ -70,3 +73,13 @@ export default function Home() {
       </Layout>
     )
 }
+
+export const query = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`

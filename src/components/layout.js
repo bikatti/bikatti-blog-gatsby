@@ -1,6 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
+import { useStaticQuery, Link, graphql } from "gatsby"
 import { createGlobalStyle } from "styled-components"
+
+
 import Container from './container'
 
 const GlobalStyle = createGlobalStyle`
@@ -9,13 +11,25 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 export default function Layout({ children }) {
+  const data = useStaticQuery(
+    graphql`
+      query {
+        site {
+          siteMetadata {
+            title
+          }
+        }
+      }
+    `
+  )
+
   return (
     <React.Fragment>
       <GlobalStyle theme="purple" />
 
       <Container>
         <Link to="/">
-          <h3>Bikatti site</h3>
+          <h3>{data.site.siteMetadata.title}  site</h3>
         </Link>
         <Link to="/about/">About</Link>
         <Link to="/about-css-modules/">About css modules</Link>
