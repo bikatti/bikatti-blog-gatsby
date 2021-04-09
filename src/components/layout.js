@@ -29,7 +29,7 @@ export default function Layout({ children }) {
 
       <Container>
         <Link to="/">
-          <h3>{data.site.siteMetadata.title}  site</h3>
+          <h3>{data.site.siteMetadata.title}   site</h3>
         </Link>
         <Link to="/about/">About</Link>
         <Link to="/about-css-modules/">About css modules</Link>
